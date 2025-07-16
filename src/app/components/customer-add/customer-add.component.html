@@ -4,16 +4,16 @@
     <form>
     <div class="mb-3">
         <label for="firstName" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="firstName" >
+        <input [(ngModel)]="firstName" type="text" class="form-control" id="firstName" name="firstName" >
     </div>
     <div class="mb-3">
         <label for="lastName" class="form-label">Apellidos</label>
-        <input type="text" class="form-control" id="lastName" >
+        <input [(ngModel)]="lastName" type="text" class="form-control" id="lastName" name="lastName" >
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="text" class="form-control" id="email" >
+        <input [(ngModel)]="email" type="text" class="form-control" id="email" name="email" >
     </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <button type="submit" class="btn btn-primary" (click)="addCustomer()" >Crear</button>
     </form>
 </div>

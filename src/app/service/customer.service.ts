@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CustomerService {
   private api : string = 'http://localhost:8080/api/customers';
+  private apiCreate : string = 'http://localhost:8080/api/customers/create';
 
   constructor(private http:HttpClient) { }
 
@@ -15,7 +16,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.api);
   }
 
-  createCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.api, customer);
+  createCustomer(customer: Partial<Customer>): Observable<Customer> {
+    return this.http.post<Customer>(this.apiCreate, customer);
   }
 }
